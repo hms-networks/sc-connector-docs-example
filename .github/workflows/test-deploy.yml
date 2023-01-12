@@ -11,14 +11,22 @@ jobs:
   test-deploy:
     name: Test deployment
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: docusaurus
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
+          cache-dependency-path: docusaurus/yarn.lock
           node-version: 18
           cache: yarn
-
+      - name: test dir 
+        run: echo pwd
       - name: Install dependencies
+        working-directory: ./docusaurus
         run: yarn install --frozen-lockfile
       - name: Test build website
+        working-directory: ./docusaurus
         run: yarn build
