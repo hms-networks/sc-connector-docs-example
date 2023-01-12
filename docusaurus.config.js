@@ -9,7 +9,7 @@ const config = {
   title: 'Connector Documentation',
   tagline: 'A Modern Approach to Docs',
   url: 'https://hms-networks.github.io',
-  baseUrl: '/',
+  baseUrl: 'sc-connector-docs-example/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon_HMS.ico',
